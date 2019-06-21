@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
+import {Text} from 'react-native';
 
-class PlayList extends Component {
-
-}
+export default () => <Text style={{flex:1, backgroundColor:'red', alignItems: 'center'}}>PlayList</Text>

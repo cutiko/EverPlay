@@ -1,16 +1,38 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {createStackNavigator, createAppContainer, NavigationScreenProps} from 'react-navigation';
+import PlayList from "./PlayList";
+import Songs from "./Songs";
 
-interface Props {}
-export default class App extends Component<Props> {
+interface MainProps extends NavigationScreenProps {}
+class Main extends Component<MainProps> {
+
+  static navigationOptions = {
+    title: 'PlayLists',
+  };
+
   render() {
+    const {navigate} = this.props.navigation;
     return (
       <View style={styles.container}>
-        <Text style={styles.instructions}>Is it crashing?</Text>
+        <Text
+          style={styles.instructions}
+          onPress={()=> navigate('Songs', {title:'testing'})}
+        >
+          Main App
+        </Text>
       </View>
     );
   }
 }
+
+const MainNavigator = createStackNavigator({
+  Main: {screen: Main},
+  PlayList: {screen: PlayList},
+  Songs: {screen: Songs},
+})
+
+export default createAppContainer(MainNavigator);
 
 const styles = StyleSheet.create({
   container: {
