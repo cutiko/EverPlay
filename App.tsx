@@ -2,7 +2,6 @@ import React from 'react';
 import {createAppContainer, createStackNavigator} from 'react-navigation';
 import {Provider} from 'react-redux'
 import {combineReducers, compose, createStore} from 'redux'
-import {Text} from 'react-native'
 
 
 import PlayList from "./PlayList";
