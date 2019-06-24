@@ -7,6 +7,7 @@ import {combineReducers, compose, createStore} from 'redux'
 import PlayList from "./PlayList";
 import Songs from "./Songs";
 import Main from "./Main";
+import Splash from "./containers/Splash";
 
 
 interface Count {
@@ -51,6 +52,7 @@ const store = createStore(rootReducer)
 
 
 const MainNavigator = createStackNavigator({
+  Splash: {screen: Splash},
   Main: {screen: Main},
   PlayList: {screen: PlayList},
   Songs: {screen: Songs},
