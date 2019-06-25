@@ -4,7 +4,7 @@ import {Song} from "../models/Song";
 import {rowStyle as row} from "../theme/playlistRow";
 import styles from '../theme/styles'
 
-export default ({item, listId}: { item: Song, listId: String }) => {
+export default ({item, listId, callback}: { item: Song, listId: String, callback : Function }) => {
   const display = (item.playlists.has(listId)) ? 'flex' : 'none'
   return (
     <View
@@ -14,7 +14,7 @@ export default ({item, listId}: { item: Song, listId: String }) => {
         row.wrapper
       ]}
     >
-      <Text style={row.text}>{item.name}</Text>
+      <Text style={row.text} onPress={()=>callback(item, listId)}>{item.name}</Text>
       <Image source={require('../images/ic_done_black_18.png')} style={{display:display}}/>
     </View>
   )

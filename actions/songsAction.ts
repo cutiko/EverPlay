@@ -1,19 +1,13 @@
-export const ADD_PLAYLIST = "ADD_PLAYLIST"
-export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST"
+export const UPDATE_SONG_PLAYLIST = "UPDATE_SONG_PLAYLIST"
 
 export interface SongPayload {
   songId: String
   playlistId: String
 }
 
-export interface addPlaylistAction {
-  type: typeof ADD_PLAYLIST,
+export interface UpdateSongPlaylist {
+  type: typeof UPDATE_SONG_PLAYLIST
   payload: SongPayload
 }
 
-export interface removePlaylistAction {
-  type: typeof REMOVE_PLAYLIST
-  payload: SongPayload
-}
-
-export type SongsTypes = addPlaylistAction | removePlaylistAction
+export type SongsTypes = UpdateSongPlaylist
