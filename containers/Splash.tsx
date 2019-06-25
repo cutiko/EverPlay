@@ -2,12 +2,9 @@ import * as React from 'react'
 import {NavigationScreenProps} from "react-navigation";
 import {ActivityIndicator, Image, Text, View} from "react-native";
 import styles from "../theme/styles";
-import {accent, primary} from "../theme/colors";
-import {connect} from "react-redux";
-import {PlayListRow} from "../models/PlayListRow";
+import {accent} from "../theme/colors";
 
 interface SplashProps extends NavigationScreenProps{
-  playlistRows : PlayListRow[]
 }
 
 export default class Splash extends React.Component<SplashProps> {
