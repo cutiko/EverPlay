@@ -3,16 +3,9 @@ import {FlatList} from 'react-native'
 import {PlayListRow, PlaylistRowsState} from "../models/PlayListRow";
 import PlaylistRowItem from "./PlaylistRowItem";
 
-interface RowsProps {
-  rows: PlaylistRowsState
-}
 
-export default ({rows}: RowsProps) => {
+export default ({rows, callback}: {rows: PlaylistRowsState, callback: any}) => {
   const data: PlayListRow[] = Array.from(rows.values())
-
-  const callback : any = (key: String) => {
-    console.warn(key)
-  }
 
   const renderItem = ({item}: { item: PlayListRow }) => (
     <PlaylistRowItem

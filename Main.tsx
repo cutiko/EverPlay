@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Text, View} from "react-native";
+import {View} from "react-native";
 import {NavigationScreenProps} from "react-navigation";
 import {connect} from "react-redux";
 import styles from "./theme/styles";
@@ -20,12 +20,10 @@ class Main extends Component<MainProps> {
     const {playlistRows, navigation: {navigate}} = this.props
     return (
       <View style={styles.container}>
-        <PlayListRows rows={playlistRows}/>
-        {/*<Text
-          onPress={() => navigate('Songs', {title: 'testing'})}
-        >
-          "Add the lists"
-        </Text>*/}
+        <PlayListRows
+          rows={playlistRows}
+          callback={(key: String)=>navigate('PlayList', {title: key})}
+        />
       </View>
     );
   }
