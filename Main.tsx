@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Text, View} from "react-native";
 import {NavigationScreenProps} from "react-navigation";
 import {connect} from "react-redux";
-import styles from "./styles";
+import styles from "./theme/styles";
 
 interface MainProps extends NavigationScreenProps {
   count: number
@@ -22,7 +22,6 @@ class Main extends Component<MainProps> {
     return (
       <View style={styles.container}>
         <Text
-          style={styles.instructions}
           onPress={() => navigate('Songs', {title: 'testing'})}
         >
           {count}
