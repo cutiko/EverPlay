@@ -3,31 +3,6 @@ import {accent, primary, white} from "./theme/colors";
 import {Song} from "./models/Song";
 import {Playlist, PlaylistState} from "./models/Playlist";
 
-export const playlistsRows = new Map<String, PlayListRow>()
-const rows = [
-  {
-    key: "RoadTrip",
-    name: "RoadTrip",
-    color: white,
-    count: 1
-  },
-  {
-    key: "Work",
-    name: "Work",
-    color: primary,
-    count: 2
-  },
-  {
-    key: "Relaxation",
-    name: "Relaxation",
-    color: accent,
-    count: 1
-  }
-]
-rows.map(row=>{
-  playlistsRows.set(row.key, row)
-})
-
 const happy : Song = {
   key: "Happy",
   name: "Happy",
@@ -46,6 +21,31 @@ const sandman : Song = {
   name: "Enter Sandman",
   playlists: new Map<String, boolean>().set("Work", true)
 }
+
+export const playlistsRows = new Map<String, PlayListRow>()
+const rows = [
+  {
+    key: "RoadTrip",
+    name: "RoadTrip",
+    color: white,
+    songs: new Map<String, boolean>().set(bohemian.key, true)
+  },
+  {
+    key: "Work",
+    name: "Work",
+    color: primary,
+    songs: new Map<String, boolean>().set(bohemian.key, true).set(sandman.key, true)
+  },
+  {
+    key: "Relaxation",
+    name: "Relaxation",
+    color: accent,
+    songs: new Map<String, boolean>().set(happy.key, true)
+  }
+]
+rows.map(row=>{
+  playlistsRows.set(row.key, row)
+})
 
 export const songs = new Map<String, Song>()
 songs.set(happy.key, happy)

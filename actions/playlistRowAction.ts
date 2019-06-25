@@ -1,15 +1,13 @@
-export const INCREASE_ROW = "INCREASE_ROW"
-export const DECREASE_ROW = "DECREASE_ROW"
+export const UPDATE_PLAYLIST_ROW = "UPDATE_PLAYLIST_ROW"
 
-export interface IncreaseRowAction {
-  type: typeof INCREASE_ROW
-  payload: String
+export interface PlaylistRowPayload {
+  listId: String
+  songId: String
 }
 
-export interface DecreaseRowAction {
-  type: typeof DECREASE_ROW
-  payload: String
+export interface UpdatePlayListRow {
+  type: typeof UPDATE_PLAYLIST_ROW
+  payload: PlaylistRowPayload
 }
 
-
-export type PlayListRowTypes = IncreaseRowAction | DecreaseRowAction
+export type PlayListRowTypes = UpdatePlayListRow

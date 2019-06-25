@@ -2,7 +2,7 @@ export interface PlayListRow {
 
   key: String
   name: String
-  count: number
+  songs: Map<String, boolean>
   color: String
 
 }

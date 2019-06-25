@@ -1,26 +1,26 @@
 import {playlistsRows} from "../seed";
 import {PlayListRow, PlaylistRowsState} from "../models/PlayListRow";
-import {DECREASE_ROW, INCREASE_ROW, PlayListRowTypes} from "../actions/playlistRowAction";
+import {PlaylistRowPayload, PlayListRowTypes, UPDATE_PLAYLIST_ROW} from "../actions/playlistRowAction";
 
-export default function playlistRowsReducer(state : PlaylistRowsState = playlistsRows, action : PlayListRowTypes) : PlaylistRowsState {
+export default function playlistRowsReducer(state: PlaylistRowsState = playlistsRows, action: PlayListRowTypes): PlaylistRowsState {
   switch (action.type) {
-    case DECREASE_ROW:
-    return changeCount(state, action.payload, -1)
-    case INCREASE_ROW:
-      return changeCount(state, action.payload, 1)
+    case UPDATE_PLAYLIST_ROW:
+      return changeCount(state, action.payload)
     default:
       return state
   }
 }
 
-function changeCount(state: PlaylistRowsState, key : String, change : number) {
-  const copy : PlaylistRowsState = {...state}
-  const row = copy.get(key)
+function changeCount(state: PlaylistRowsState, {listId, songId}: PlaylistRowPayload) {
+  const copy = new Map<String, PlayListRow>(state)
+  const row = copy.get(listId)
   if (row) {
     const safeRow : PlayListRow = row
-    const {count} = safeRow
-    safeRow.count = count + change
-    copy.set(safeRow.key, safeRow)
+    if (safeRow.songs.has(songId)) {
+      safeRow.songs.delete(songId)
+    } else {
+      safeRow.songs.set(songId, true)
+    }
     return copy
   }
   return state
