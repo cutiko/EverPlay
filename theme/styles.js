@@ -1,5 +1,5 @@
 import {StyleSheet} from "react-native";
-import {black, lightGray, primary, white} from "./colors";
+import {black, primary, white} from "./colors";
 
 export default StyleSheet.create({
   splash: {
@@ -21,16 +21,7 @@ export default StyleSheet.create({
     color: white,
     fontSize: 21
   },
-  row: {
-    paddingStart: 16,
-    paddingEnd: 16,
-    paddingTop: 8,
-    paddingBottom: 8,
-    alignItems: 'flex-start',
-    borderWidth: 1,
-    borderColor: lightGray
-  },
   textColor: {
     color: black,
-  }
+  },
 });
