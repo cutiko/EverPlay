@@ -8,6 +8,7 @@ import {Playlist, PlaylistState} from "../models/Playlist";
 import {connect} from "react-redux";
 import {playlists} from "../seed";
 import PlaylistList from "../components/FlatPlaylist";
+import AddButton from "../components/AddButton";
 
 interface PlayListProps extends EverProps{
   playlists: PlaylistState
@@ -19,7 +20,7 @@ class PlayList extends Component<PlayListProps> {
     const {name} : PlayListRow = navigation.getParam("playlistRow");
     return {
       title: name,
-      headerRight: (<Text>HERE</Text>)
+      headerRight: (<AddButton/>)
     }
   }
 
