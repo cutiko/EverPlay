@@ -4,6 +4,7 @@ import {NavigationScreenProps} from "react-navigation";
 import {connect} from "react-redux";
 import styles from "./theme/styles";
 import {PlaylistRowsState} from "./models/PlayListRow";
+import PlayListRows from "./components/PlayListRows";
 
 interface MainProps extends NavigationScreenProps {
   playlistRows: PlaylistRowsState
@@ -19,11 +20,12 @@ class Main extends Component<MainProps> {
     const {playlistRows, navigation: {navigate}} = this.props
     return (
       <View style={styles.container}>
-        <Text
+        <PlayListRows rows={playlistRows}/>
+        {/*<Text
           onPress={() => navigate('Songs', {title: 'testing'})}
         >
           "Add the lists"
-        </Text>
+        </Text>*/}
       </View>
     );
   }
