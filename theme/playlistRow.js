@@ -19,10 +19,10 @@ export const rowStyle = StyleSheet.create({
   wrapper: {
     flex:1,
     flexDirection: 'row',
-    paddingStart: 16,
-    paddingEnd: 16,
-    paddingTop: 8,
-    paddingBottom: 8,
+    paddingStart: 24,
+    paddingEnd: 24,
+    paddingTop: 16,
+    paddingBottom: 16,
   },
   text: {
     flex:1
