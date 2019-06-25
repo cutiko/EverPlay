@@ -9,6 +9,6 @@ interface RowProps {
 
 export default ({row: {name, count, color}} : {row: PlayListRow})=> {
   return (
-    <View style={styles.row}><Text>{name}</Text></View>
+    <View style={styles.row}><Text style={styles.textColor}>{name}</Text></View>
   )
 }
