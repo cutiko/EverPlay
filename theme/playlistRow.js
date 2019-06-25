@@ -14,11 +14,11 @@ export const rowStyle = StyleSheet.create({
     height: '100%',
     borderWidth: 1,
     borderEndColor: lightGray,
+    marginEnd: 8,
   },
   wrapper: {
     flex:1,
     flexDirection: 'row',
-    marginStart: 8,
     paddingStart: 16,
     paddingEnd: 16,
     paddingTop: 8,
