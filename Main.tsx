@@ -3,22 +3,20 @@ import {Text, View} from "react-native";
 import {NavigationScreenProps} from "react-navigation";
 import {connect} from "react-redux";
 import styles from "./theme/styles";
+import {PlaylistRowsState} from "./models/PlayListRow";
 
 interface MainProps extends NavigationScreenProps {
-  count: number
+  playlistRows: PlaylistRowsState
 }
 
-export default class Main extends Component<MainProps> {
+class Main extends Component<MainProps> {
 
   static navigationOptions = {
     title: 'PlayLists',
   };
 
   render() {
-    const {navigate} = this.props.navigation;
-    /*console.log(this.props)
-    const {count} = this.props
-    console.log(count)*/
+    const {playlistRows, navigation: {navigate}} = this.props
     return (
       <View style={styles.container}>
         <Text
@@ -33,8 +31,8 @@ export default class Main extends Component<MainProps> {
 
 function mapStateToProps(state : any) {
   return {
-    count: state.count.count.count
+    playlistRows: state.playlistRows
   }
 }
 
-//export default connect(mapStateToProps)(Main)
+export default connect(mapStateToProps)(Main)
