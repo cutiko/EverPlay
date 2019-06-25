@@ -1,7 +1,7 @@
 import React from 'react'
 import {FlatList} from 'react-native'
 import {PlayListRow, PlaylistRowsState} from "../models/PlayListRow";
-import PlaylistRowItem from "./PlaylistRowItem";
+import PlaylistRowItem from "./ItemPlaylistRow";
 
 
 export default ({rows, callback}: {rows: PlaylistRowsState, callback: any}) => {

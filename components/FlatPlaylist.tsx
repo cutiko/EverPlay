@@ -2,7 +2,7 @@ import React from 'React'
 import {FlatList} from "react-native"
 import {Playlist} from '../models/Playlist'
 import {Song} from "../models/Song";
-import SongItem from "./SongItem";
+import SongItem from "./ItemPlaylist";
 
 export default ({playlist}: { playlist: Playlist | undefined }) => {
 

@@ -7,7 +7,7 @@ import {white} from "../theme/colors";
 import {Playlist, PlaylistState} from "../models/Playlist";
 import {connect} from "react-redux";
 import {playlists} from "../seed";
-import PlaylistList from "../components/PlaylistList";
+import PlaylistList from "../components/FlatPlaylist";
 
 interface PlayListProps extends EverProps{
   playlists: PlaylistState

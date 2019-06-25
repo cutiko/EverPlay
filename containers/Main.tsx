@@ -4,7 +4,7 @@ import {NavigationScreenProps} from "react-navigation";
 import {connect} from "react-redux";
 import styles from "../theme/styles";
 import {PlaylistRowsState} from "../models/PlayListRow";
-import PlayListRows from "../components/PlayListRows";
+import PlayListRows from "../components/FlatPlayListRow";
 
 interface MainProps extends NavigationScreenProps {
   playlistRows: PlaylistRowsState
