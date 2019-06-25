@@ -1,6 +1,7 @@
 import React from 'react'
 import {PlayListRow} from "../models/PlayListRow";
-import {Text} from 'react-native'
+import {View, Text} from 'react-native'
+import styles from "../theme/styles";
 
 interface RowProps {
   row: PlayListRow
@@ -8,6 +9,6 @@ interface RowProps {
 
 export default ({row: {name, count, color}} : {row: PlayListRow})=> {
   return (
-    <Text>{name}</Text>
+    <View style={styles.row}><Text>{name}</Text></View>
   )
 }
