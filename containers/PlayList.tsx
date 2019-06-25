@@ -7,6 +7,7 @@ import {white} from "../theme/colors";
 import {Playlist, PlaylistState} from "../models/Playlist";
 import {connect} from "react-redux";
 import {playlists} from "../seed";
+import PlaylistList from "../components/PlaylistList";
 
 interface PlayListProps extends EverProps{
   playlists: PlaylistState
@@ -22,7 +23,7 @@ class PlayList extends Component<PlayListProps> {
   }
 
   render() {
-    const {key, name, count, color} = this.props.navigation.getParam("playlistRow");
+    const {key, color} = this.props.navigation.getParam("playlistRow");
     return handleState(key, color, playlists)
   }
 }
@@ -34,7 +35,7 @@ function handleState(key: String, color: String, playlists: PlaylistState) {
     if (playlists) {
       return (
         <View style={[styles.container, {backgroundColor: safeColor.toString()}]}>
-
+          <PlaylistList playlist={playlist}/>
         </View>
       )
     }
