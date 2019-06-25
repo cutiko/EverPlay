@@ -7,10 +7,13 @@ import {connect} from "react-redux";
 import FlatSongs from "../components/FlatSongs";
 import {bindActionCreators} from "redux";
 import {SongPayload, UPDATE_SONG_PLAYLIST, UpdateSongPlaylist} from "../actions/songsAction";
+import {PlaylistPayload, UPDATE_PLAYLIST, UpdatePlaylistAction} from '../actions/playlistAction'
 
 interface SongsProps extends EverProps {
   songs: SongState
   updateSongPlaylist: Function
+  updatePlaylistAction: Function
+
 }
 
 class Songs extends Component<SongsProps> {
@@ -29,6 +32,11 @@ class Songs extends Component<SongsProps> {
       playlistId: listId
     }
     this.props.updateSongPlaylist(songPayload)
+    const playlistPayload : PlaylistPayload = {
+      song,
+      listId
+    }
+    this.props.updatePlaylistAction(playlistPayload)
   }
 
   render() {
@@ -50,9 +58,17 @@ function updateSongPlaylist(payload: SongPayload) : UpdateSongPlaylist {
   }
 }
 
+function updatePlaylistAction(payload: PlaylistPayload) : UpdatePlaylistAction {
+  return {
+    type: UPDATE_PLAYLIST,
+    payload
+  }
+}
+
 function mapDispatchToProps(dispatch : any) {
   return bindActionCreators({
-    updateSongPlaylist: updateSongPlaylist,
+    updateSongPlaylist,
+    updatePlaylistAction,
   }, dispatch)
 }
 

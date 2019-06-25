@@ -1,16 +1,15 @@
 import {Song} from "../models/Song";
 
-export const ADD_SONG = "ADD_SONG"
-export const REMOVE_SONG = "REMOVE_SONG"
+export const UPDATE_PLAYLIST = "UPDATE_PLAYLIST"
 
-export interface AddSongAcion {
-  type: typeof ADD_SONG
-  payload: Song
+export interface PlaylistPayload {
+  song: Song
+  listId: String
 }
 
-export interface RemoveSongAction {
-  type: typeof REMOVE_SONG
-  payload: Song
+export interface UpdatePlaylistAction {
+  type: typeof UPDATE_PLAYLIST
+  payload: PlaylistPayload
 }
 
-export type PlaylistTypes = AddSongAcion | RemoveSongAction
+export type PlaylistTypes = UpdatePlaylistAction
