@@ -1,7 +1,7 @@
-import {PlayListRow, PlaylistRowsState} from "./models/PlayListRow";
+import {PlayListRow} from "./models/PlayListRow";
 import {accent, primary, white} from "./theme/colors";
 
-const seed = new Map<String, PlayListRow>()
+export const playlistsRows = new Map<String, PlayListRow>()
 const rows = [
   {
     key: "RoadTrip",
@@ -23,6 +23,5 @@ const rows = [
   }
 ]
 rows.map(row=>{
-  seed.set(row.key, row)
+  playlistsRows.set(row.key, row)
 })
-export default seed
