@@ -1,11 +1,10 @@
 export interface PlayListRow {
 
+  key: String
   name: String
   count: number
   color: String
 
 }
 
-export interface PlaylistRowsState {
-  playlists: PlayListRow[]
-}
+export type PlaylistRowsState = Map<String, PlayListRow>
