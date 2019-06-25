@@ -14,6 +14,7 @@ class Main extends Component<MainProps> {
 
   static navigationOptions = {
     title: 'PlayLists',
+    headerLeft: null
   };
 
   render() {
