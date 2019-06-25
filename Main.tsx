@@ -23,7 +23,7 @@ class Main extends Component<MainProps> {
       <View style={styles.container}>
         <PlayListRows
           rows={playlistRows}
-          callback={(key: String)=>navigate('PlayList', {title: key})}
+          callback={(key: String)=>navigate('PlayList', {playlistRow: playlistRows.get(key)})}
         />
       </View>
     );
