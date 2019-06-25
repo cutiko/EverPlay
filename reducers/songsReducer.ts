@@ -16,10 +16,8 @@ function changeSongPlaylist(state: SongState, songId: String, playlistId: String
   const song = copy.get(songId)
   if (song) {
     if (song.playlists.has(playlistId)) {
-      console.warn('remove')
       song.playlists.delete(playlistId)
     } else {
-      console.warn('add')
       song.playlists.set(playlistId, true)
     }
     return copy
