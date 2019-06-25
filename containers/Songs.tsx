@@ -3,10 +3,13 @@ import {Text, View} from 'react-native';
 import {aliasesNavigation, EverProps} from "../types/EverProps";
 import styles from "../theme/styles";
 import {SongState} from "../models/Song";
+import {connect} from "react-redux";
+import FlatSongs from "../components/FlatSongs";
 
 interface SongsProps extends EverProps {
   songs: SongState
 }
+
 class Songs extends Component<SongsProps> {
 
   static navigationOptions = ({ navigation} : {navigation : aliasesNavigation}) => {
@@ -18,9 +21,11 @@ class Songs extends Component<SongsProps> {
   }
 
   render() {
+    const {songs, navigation} = this.props
+    const key = navigation.getParam("key")
     return (
       <View style={styles.container}>
-
+        <FlatSongs songs={songs} listId={key}/>
       </View>
     )
   }
@@ -44,5 +49,4 @@ function mapStateToProps(state : any) {
   }
 }
 
-//export default connect(mapStateToProps, mapDispatchToProps)(Songs)
-export default Songs
+export default connect(mapStateToProps)(Songs)
