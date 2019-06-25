@@ -3,7 +3,7 @@ import {PlayListRow} from "../models/PlayListRow";
 import {Text, View} from 'react-native'
 import styles from "../theme/styles";
 import {white} from "../theme/colors";
-import row from '../theme/row'
+import {rowStyle as row} from '../theme/playlistRow'
 
 export default ({row: {name, count, color, key}, callback}: { row: PlayListRow, callback: any }) => {
   const safeColor = color || white

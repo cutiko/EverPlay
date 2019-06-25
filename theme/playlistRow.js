@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import {lightGray} from "./colors";
 
-export default StyleSheet.create({
+export const rowStyle = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
