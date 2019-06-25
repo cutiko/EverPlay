@@ -18,7 +18,8 @@ class PlayList extends Component<PlayListProps> {
   static navigationOptions = ({ navigation } : {navigation : aliasesNavigation}) => {
     const {name} : PlayListRow = navigation.getParam("playlistRow");
     return {
-      title: name
+      title: name,
+      headerRight: (<Text>HERE</Text>)
     }
   }
 
