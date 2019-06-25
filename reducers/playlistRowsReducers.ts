@@ -1,12 +1,12 @@
 import {playlistsRows} from "../seed";
 import {PlayListRow, PlaylistRowsState} from "../models/PlayListRow";
-import {PlayListRowTypes} from "../actions/playlistRowAction";
+import {DECREASE_ROW, INCREASE_ROW, PlayListRowTypes} from "../actions/playlistRowAction";
 
 export default function playlistRowsReducer(state : PlaylistRowsState = playlistsRows, action : PlayListRowTypes) : PlaylistRowsState {
   switch (action.type) {
-    case "DECREASE_ROW":
+    case DECREASE_ROW:
     return changeCount(state, action.payload, -1)
-    case "INCREASE_ROW":
+    case INCREASE_ROW:
       return changeCount(state, action.payload, 1)
     default:
       return state
