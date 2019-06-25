@@ -10,7 +10,7 @@ export interface AddSongAcion {
 
 export interface RemoveSongAction {
   type: typeof REMOVE_SONG
-  payload: String
+  payload: Song
 }
 
 export type PlaylistTypes = AddSongAcion | RemoveSongAction
