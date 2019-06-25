@@ -8,12 +8,13 @@ import FlatSongs from "../components/FlatSongs";
 import {bindActionCreators} from "redux";
 import {SongPayload, UPDATE_SONG_PLAYLIST, UpdateSongPlaylist} from "../actions/songsAction";
 import {PlaylistPayload, UPDATE_PLAYLIST, UpdatePlaylistAction} from '../actions/playlistAction'
+import {PlaylistRowPayload, UPDATE_PLAYLIST_ROW, UpdatePlayListRow} from "../actions/playlistRowAction";
 
 interface SongsProps extends EverProps {
   songs: SongState
   updateSongPlaylist: Function
   updatePlaylistAction: Function
-
+  updatePlayListRow: Function
 }
 
 class Songs extends Component<SongsProps> {
@@ -37,6 +38,11 @@ class Songs extends Component<SongsProps> {
       listId
     }
     this.props.updatePlaylistAction(playlistPayload)
+    const playlistRowPayload : PlaylistRowPayload = {
+      songId: song.key,
+      listId
+    }
+    this.props.updatePlayListRow(playlistRowPayload)
   }
 
   render() {
@@ -65,10 +71,18 @@ function updatePlaylistAction(payload: PlaylistPayload) : UpdatePlaylistAction {
   }
 }
 
+function updatePlayListRow(payload : PlaylistRowPayload): UpdatePlayListRow {
+  return {
+    type: UPDATE_PLAYLIST_ROW,
+    payload
+  }
+}
+
 function mapDispatchToProps(dispatch : any) {
   return bindActionCreators({
     updateSongPlaylist,
     updatePlaylistAction,
+    updatePlayListRow
   }, dispatch)
 }
 
