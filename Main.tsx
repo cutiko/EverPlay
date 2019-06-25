@@ -8,7 +8,7 @@ interface MainProps extends NavigationScreenProps {
   count: number
 }
 
-class Main extends Component<MainProps> {
+export default class Main extends Component<MainProps> {
 
   static navigationOptions = {
     title: 'PlayLists',
@@ -16,15 +16,15 @@ class Main extends Component<MainProps> {
 
   render() {
     const {navigate} = this.props.navigation;
-    console.log(this.props)
+    /*console.log(this.props)
     const {count} = this.props
-    console.log(count)
+    console.log(count)*/
     return (
       <View style={styles.container}>
         <Text
           onPress={() => navigate('Songs', {title: 'testing'})}
         >
-          {count}
+          "Add the lists"
         </Text>
       </View>
     );
@@ -37,4 +37,4 @@ function mapStateToProps(state : any) {
   }
 }
 
-export default connect(mapStateToProps)(Main)
+//export default connect(mapStateToProps)(Main)

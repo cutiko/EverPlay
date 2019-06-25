@@ -1,31 +1,34 @@
 import * as React from 'react'
-import {NavigationScreenComponent, NavigationScreenProps} from "react-navigation";
+import {NavigationScreenProps} from "react-navigation";
 import {ActivityIndicator, Image, Text, View} from "react-native";
 import styles from "../theme/styles";
 import {accent, primary} from "../theme/colors";
+import {connect} from "react-redux";
+import {PlayListRow} from "../models/PlayListRow";
 
 interface SplashProps extends NavigationScreenProps{
-
+  playlistRows : PlayListRow[]
 }
 
-const Splash : NavigationScreenComponent<SplashProps> = (props : SplashProps)=> {
+export default class Splash extends React.Component<SplashProps> {
 
-  return (
-    <View style={[styles.container, styles.splash]}>
-      <Text style={styles.titleWhite}>EverPlay</Text>
-      <Image source={require('../images/evernote_logo.png')}/>
-      <ActivityIndicator
-        size="large"
-        color={accent.toString()}
-      />
-    </View>
-  );
-}
+  static navigationOptions = {header: null}
 
-Splash.navigationOptions = {
-  headerStyle: {
-    backgroundColor: primary,
+  componentDidMount(): void {
+    const {navigate} = this.props.navigation
+    setTimeout(()=>navigate("Main"), 3500)
+  }
+
+  render() {
+    return (
+      <View style={[styles.container, styles.splash]}>
+        <Text style={styles.titleWhite}>EverPlay</Text>
+        <Image source={require('../images/evernote_logo.png')}/>
+        <ActivityIndicator
+          size="large"
+          color={accent.toString()}
+        />
+      </View>
+    );
   }
 }
-
-export default Splash
