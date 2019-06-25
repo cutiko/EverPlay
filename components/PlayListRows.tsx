@@ -10,9 +10,7 @@ interface RowsProps {
 export default ({rows}: RowsProps) => {
   const data : PlayListRow[] = Array.from(rows.values())
 
-  function renderItem({item}: {item : PlayListRow}) {
-    return <PlaylistRowItem row={item}/>
-  }
+  const renderItem = ({item}: {item : PlayListRow})=> <PlaylistRowItem row={item}/>
 
   return (
     <FlatList data={data} renderItem={renderItem}/>
