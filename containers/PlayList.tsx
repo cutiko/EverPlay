@@ -16,11 +16,11 @@ interface PlayListProps extends EverProps{
 
 class PlayList extends Component<PlayListProps> {
 
-  static navigationOptions = ({ navigation } : {navigation : aliasesNavigation}) => {
-    const {name} : PlayListRow = navigation.getParam("playlistRow");
+  static navigationOptions = ({ navigation} : {navigation : aliasesNavigation}) => {
+    const {key, name} : PlayListRow = navigation.getParam("playlistRow");
     return {
       title: name,
-      headerRight: (<AddButton/>)
+      headerRight: (<AddButton callback={()=>navigation.navigate('Songs', {key})}/>)
     }
   }
 
