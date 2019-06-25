@@ -13,7 +13,7 @@ export default class Splash extends React.Component<SplashProps> {
 
   componentDidMount(): void {
     const {navigate} = this.props.navigation
-    setTimeout(()=>navigate("Main"), 3500)
+    setTimeout(()=>navigate("Main"), 800)
   }
 
   render() {

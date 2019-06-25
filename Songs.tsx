@@ -1,32 +1,30 @@
 import * as React from 'react';
 import {Text} from 'react-native';
-import {NavigationScreenProps} from 'react-navigation';
+/*import {NavigationScreenProps} from 'react-navigation';
 import {bindActionCreators} from "redux";
-import {connect} from "react-redux";
-import {countAction} from "./App";
+import {connect} from "react-redux";*/
+import {EverProps} from "./types/EverProps";
 
-interface SongsProps extends NavigationScreenProps {
-  navigation: any
-  title: String
-  countAction: any
-  count: number
+interface SongsProps extends EverProps {
+
 }
 
-const Songs: React.FunctionComponent<SongsProps> = (props: SongsProps) => {
-  console.log(props)
+const Songs = (props : SongsProps)=> {
+  console.warn(props.navigation.state.params.key)
   //console.warn(props.navigation.state.params.title)
 
-  return <Text style={{flex: 1, backgroundColor: 'green'}} onPress={()=>props.countAction({count:props.count})}/>;
+  return <Text style={{flex: 1, backgroundColor: 'green'}}/* onPress={()=>props.countAction({count:props.count})}*//>;
 }
 
-function mapDispatchToProps(dispatch : any) {
+/*function mapDispatchToProps(dispatch : any) {
   return bindActionCreators({countAction}, dispatch)
-}
+}*/
 
-function mapStateToProps(state : any) {
+/*function mapStateToProps(state : any) {
   return {
     count: state.count.count.count
   }
-}
+}*/
 
-export default connect(mapStateToProps, mapDispatchToProps)(Songs)
+//export default connect(mapStateToProps, mapDispatchToProps)(Songs)
+export default Songs
