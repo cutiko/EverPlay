@@ -5,7 +5,7 @@ import {createStore} from 'redux'
 
 
 import Splash from "./containers/Splash";
-import PlayList from "./PlayList";
+import PlayList from "./containers/PlayList";
 import Songs from "./Songs";
 import Main from "./containers/Main";
 import combineReducers from "./reducers/combineReducers";

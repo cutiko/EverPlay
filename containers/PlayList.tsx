@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {View} from 'react-native';
-import {aliasesNavigation, EverProps} from "./types/EverProps";
-import {PlayListRow} from "./models/PlayListRow";
-import styles from "./theme/styles";
-import {white} from "./theme/colors";
+import {aliasesNavigation, EverProps} from "../types/EverProps";
+import {PlayListRow} from "../models/PlayListRow";
+import styles from "../theme/styles";
+import {white} from "../theme/colors";
 
 class PlayList extends Component<EverProps> {
 
