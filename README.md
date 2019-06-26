@@ -181,8 +181,8 @@ After reviewing the docs related with it. I think React Native approach for asse
 
 ### Improvements
 
- - PlaylistScreen listen to all the playlists
+ - PlaylistScreen listen to all the playlists then use the key pass with navigation to define 1 playlist to show. This should not be a problem, but it seems wastefull to have an unused ammount of playlists just been there. I think the solution would be to have something like another state `currentPlaylist` the problem is I can't figure now how to concatenate the 2 states.
 
 ### Known Issues
 
- - Android Back Button
+ - Users can go back to the SplashScreen on Android when pressing the back button. This error was not anticipated because is not a major problem on Android Java/Kotlin. The first attempts to solve it points to using the listener for the event could prove fruitfull but removing the listener when changing screen is troublesome. The splash screen is a very usefull user experience pattern, maybe integrating Router only for that part could solve it better than handling the back button.
