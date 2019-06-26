@@ -1,14 +1,14 @@
 import React, {Component} from "react";
 import {View} from "react-native";
-import {NavigationScreenProps} from "react-navigation";
 import {connect} from "react-redux";
 import styles from "../theme/styles";
 import {PlaylistRowsState} from "../models/PlayListRow";
 import PlayListRows from "../components/FlatPlayListRow";
 import {PLAYLIST_SCREEN} from "../Navigation";
 import {AppState} from "../reducers/combineReducers";
+import {EverProps} from "../types/EverProps";
 
-interface MainProps extends NavigationScreenProps {
+interface MainProps extends EverProps {
   playlistRows: PlaylistRowsState
 }
 
