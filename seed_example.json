@@ -1,0 +1,140 @@
+{
+  "users_lists_rows": {
+    "uid1": {
+      "list1": {
+        "key": "list1",
+        "name": "Cool Playlist",
+        "color": "#FFF",
+        "songs": {
+          "songId1": true,
+          "songId2": true,
+          "songId289": true
+        }
+      },
+      "list2": {
+        "key": "list2",
+        "name": "Second Playlist",
+        "color": "#F4A45F",
+        "songs": {
+          "songId2": true,
+          "songId500": true
+        }
+      }
+    },
+    "uid2": {
+      "list8000": {
+        "key": "list8000",
+        "name": "Second User First List",
+        "color": "#4F4E4F",
+        "songs": {
+          "songId289": true
+        }
+      }
+    }
+  },
+  "users_lists": {
+    "uid1": {
+      "list1": {
+        "songs": {
+          "songId1": {
+            "key": "songId1",
+            "name": "Sad Song"
+          },
+          "songId2": {
+            "key": "songId2",
+            "name": "Foo Bar Song"
+          },
+          "songId289": {
+            "key": "songId289",
+            "name": "National Anthem"
+          }
+        },
+        "key": "list1"
+      },
+      "list2": {
+        "key": "list2",
+        "songs": {
+          "songId2": {
+            "key": "songId2",
+            "name": "Foo Bar Song"
+          },
+          "songId500": {
+            "key": "songId500",
+            "name": "Song 1"
+          }
+        }
+      }
+    },
+    "uid2": {
+      "list8000": {
+        "key": "list8000",
+        "songs": {
+          "songId289": {
+            "key": "songId289",
+            "name": "National Anthem"
+          }
+        }
+      }
+    }
+  },
+  "user_songs": {
+    "uid1": {
+      "songId1": {
+        "key": "songId1",
+        "name": "Sad Song",
+        "playlists": {
+          "list1": true
+        }
+      },
+      "songId2": {
+        "key": "songId2",
+        "name": "Foo Bar Song",
+        "playlists": {
+          "list1": true,
+          "list2": true
+        }
+      },
+      "songId289": {
+        "key": "songId289",
+        "name": "National Anthem",
+        "playlists": {
+          "list1": true
+        }
+      },
+      "songId500": {
+        "key": "songId500",
+        "name": "Song 1",
+        "playlists": {
+          "list1": true
+        }
+      }
+    },
+    "uid2": {
+      "songId289": {
+        "key": "songId289",
+        "name": "National Anthem",
+        "playlists": {
+          "list800": true
+        }
+      }
+    }
+  },
+  "songs": {
+    "songId500": {
+      "key": "songId500",
+      "name": "Song 1"
+    },
+    "songId1": {
+      "key": "songId1",
+      "name": "Sad Song"
+    },
+    "songId2": {
+      "key": "songId2",
+      "name": "Foo Bar Song"
+    },
+    "songId289": {
+      "key": "songId289",
+      "name": "National Anthem"
+    }
+  }
+}
