@@ -9,18 +9,19 @@ import {connect} from "react-redux";
 import {playlists} from "../seed";
 import PlaylistList from "../components/FlatPlaylist";
 import AddButton from "../components/AddButton";
+import {SONGS_SCREEN} from "../Navigation";
 
 interface PlayListProps extends EverProps{
   playlists: PlaylistState
 }
 
-class PlayList extends Component<PlayListProps> {
+class PlaylistScreen extends Component<PlayListProps> {
 
   static navigationOptions = ({ navigation} : {navigation : aliasesNavigation}) => {
     const {key, name} : PlayListRow = navigation.getParam("playlistRow");
     return {
       title: name,
-      headerRight: (<AddButton callback={()=>navigation.navigate('Songs', {key})}/>)
+      headerRight: (<AddButton callback={()=>navigation.navigate(SONGS_SCREEN, {key})}/>)
     }
   }
 
@@ -55,4 +56,4 @@ function mapStateToProps(state : any) {
   }
 }
 
-export default connect(mapStateToProps)(PlayList);
+export default connect(mapStateToProps)(PlaylistScreen);

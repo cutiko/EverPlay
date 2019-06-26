@@ -3,17 +3,18 @@ import {NavigationScreenProps} from "react-navigation";
 import {ActivityIndicator, Image, Text, View} from "react-native";
 import styles from "../theme/styles";
 import {accent} from "../theme/colors";
+import {MAIN_SCREEN} from "../Navigation";
 
 interface SplashProps extends NavigationScreenProps{
 }
 
-export default class Splash extends React.Component<SplashProps> {
+export default class SplashScreen extends React.Component<SplashProps> {
 
   static navigationOptions = {header: null}
 
   componentDidMount(): void {
     const {navigate} = this.props.navigation
-    setTimeout(()=>navigate("Main"), 800)
+    setTimeout(()=>navigate(MAIN_SCREEN), 800)
   }
 
   render() {

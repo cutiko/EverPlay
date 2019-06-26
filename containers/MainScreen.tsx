@@ -5,12 +5,13 @@ import {connect} from "react-redux";
 import styles from "../theme/styles";
 import {PlaylistRowsState} from "../models/PlayListRow";
 import PlayListRows from "../components/FlatPlayListRow";
+import {PLAYLIST_SCREEN} from "../Navigation";
 
 interface MainProps extends NavigationScreenProps {
   playlistRows: PlaylistRowsState
 }
 
-class Main extends Component<MainProps> {
+class MainScreen extends Component<MainProps> {
 
   static navigationOptions = {
     title: 'PlayLists',
@@ -23,7 +24,7 @@ class Main extends Component<MainProps> {
       <View style={styles.container}>
         <PlayListRows
           rows={playlistRows}
-          callback={(key: String)=>navigate('PlayList', {playlistRow: playlistRows.get(key)})}
+          callback={(key: String)=>navigate(PLAYLIST_SCREEN, {playlistRow: playlistRows.get(key)})}
         />
       </View>
     );
@@ -36,4 +37,4 @@ function mapStateToProps(state : any) {
   }
 }
 
-export default connect(mapStateToProps)(Main)
+export default connect(mapStateToProps)(MainScreen)

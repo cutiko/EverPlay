@@ -17,7 +17,7 @@ interface SongsProps extends EverProps {
   updatePlayListRow: Function
 }
 
-class Songs extends Component<SongsProps> {
+class SongsScreen extends Component<SongsProps> {
 
   static navigationOptions = ({ navigation} : {navigation : aliasesNavigation}) => {
     return {
@@ -92,4 +92,4 @@ function mapStateToProps(state : any) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Songs)
+export default connect(mapStateToProps, mapDispatchToProps)(SongsScreen)
