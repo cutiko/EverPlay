@@ -6,9 +6,11 @@ import {Song, SongState} from "../models/Song";
 import {connect} from "react-redux";
 import FlatSongs from "../components/FlatSongs";
 import {bindActionCreators} from "redux";
-import {SongPayload, UPDATE_SONG_PLAYLIST, UpdateSongPlaylist} from "../actions/songsAction";
+
+import {UPDATE_SONG_PLAYLIST, UpdateSongPlaylist} from "../actions/songsAction";
 import {PlaylistPayload, UPDATE_PLAYLIST, UpdatePlaylistAction} from '../actions/playlistAction'
 import {PlaylistRowPayload, UPDATE_PLAYLIST_ROW, UpdatePlayListRow} from "../actions/playlistRowAction";
+import {SongPayload} from "../actions/payload";
 
 interface SongsProps extends EverProps {
   songs: SongState
@@ -27,11 +29,8 @@ class SongsScreen extends Component<SongsProps> {
     }
   }
 
-  callback = (song : Song, listId : String)=> {
-    const songPayload : SongPayload = {
-      songId: song.key,
-      playlistId: listId
-    }
+  callback = (song : Song, listId : string)=> {
+    const songPayload : SongPayload = {song, listId}
     this.props.updateSongPlaylist(songPayload)
     const playlistPayload : PlaylistPayload = {
       song,

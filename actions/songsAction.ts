@@ -1,9 +1,6 @@
-export const UPDATE_SONG_PLAYLIST = "UPDATE_SONG_PLAYLIST"
+import {SongPayload} from "./payload";
 
-export interface SongPayload {
-  songId: String
-  playlistId: String
-}
+export const UPDATE_SONG_PLAYLIST = "UPDATE_SONG_PLAYLIST"
 
 export interface UpdateSongPlaylist {
   type: typeof UPDATE_SONG_PLAYLIST
