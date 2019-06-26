@@ -1,13 +1,10 @@
-export const UPDATE_PLAYLIST_ROW = "UPDATE_PLAYLIST_ROW"
+import {SongPayload} from "./payload";
 
-export interface PlaylistRowPayload {
-  listId: String
-  songId: String
-}
+export const UPDATE_PLAYLIST_ROW = "UPDATE_PLAYLIST_ROW"
 
 export interface UpdatePlayListRow {
   type: typeof UPDATE_PLAYLIST_ROW
-  payload: PlaylistRowPayload
+  payload: SongPayload
 }
 
 export type PlayListRowTypes = UpdatePlayListRow

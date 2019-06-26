@@ -9,7 +9,7 @@ import {bindActionCreators} from "redux";
 
 import {UPDATE_SONG_PLAYLIST, UpdateSongPlaylist} from "../actions/songsAction";
 import {UPDATE_PLAYLIST, UpdatePlaylistAction} from '../actions/playlistAction'
-import {PlaylistRowPayload, UPDATE_PLAYLIST_ROW, UpdatePlayListRow} from "../actions/playlistRowAction";
+import {UPDATE_PLAYLIST_ROW, UpdatePlayListRow} from "../actions/playlistRowAction";
 import {SongPayload} from "../actions/payload";
 
 interface SongsProps extends EverProps {
@@ -33,11 +33,7 @@ class SongsScreen extends Component<SongsProps> {
     const songPayload : SongPayload = {song, listId}
     this.props.updateSongPlaylist(songPayload)
     this.props.updatePlaylistAction(songPayload)
-    const playlistRowPayload : PlaylistRowPayload = {
-      songId: song.key,
-      listId
-    }
-    this.props.updatePlayListRow(playlistRowPayload)
+    this.props.updatePlayListRow(songPayload)
   }
 
   render() {
@@ -66,7 +62,7 @@ function updatePlaylistAction(payload: SongPayload) : UpdatePlaylistAction {
   }
 }
 
-function updatePlayListRow(payload : PlaylistRowPayload): UpdatePlayListRow {
+function updatePlayListRow(payload : SongPayload): UpdatePlayListRow {
   return {
     type: UPDATE_PLAYLIST_ROW,
     payload
