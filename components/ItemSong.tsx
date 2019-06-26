@@ -15,7 +15,7 @@ export default ({item, listId, callback}: { item: Song, listId: String, callback
       ]}
     >
       <Text style={row.text} onPress={()=>callback(item, listId)}>{item.name}</Text>
-      <Image source={require('../images/ic_done_black_18.png')} style={{display:display}}/>
+      <Image source={require('../images/ic_check_white_circle_primary_16.png')} style={{display:display}}/>
     </View>
   )
 }
