@@ -1,9 +1,9 @@
 import React from 'react'
 import {FlatList} from "react-native";
 import {Song, SongState} from "../models/Song";
-import ItemSong from './ItemSong'
+import ItemSong, {callback} from './ItemSong'
 
-export default ({songs, listId, callback} : {songs: SongState, listId: string, callback : Function})=> {
+export default ({songs, listId, callback} : {songs: SongState, listId: string, callback : callback})=> {
   const data = Array.from(songs.values())
 
   const renderItem = ({item} : {item : Song})=> (

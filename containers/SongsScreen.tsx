@@ -25,7 +25,7 @@ class SongsScreen extends Component<SongsProps> {
     }
   }
 
-  callback = (song : Song, listId : string)=> {
+  callback = (song: Song, listId: string)=>{
     const songPayload : SongPayload = {song, listId}
     const {updateState} = this.props
     updateState(UPDATE_SONG_PLAYLIST, songPayload)
@@ -59,3 +59,4 @@ function mapStateToProps(state : any) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongsScreen)
+
