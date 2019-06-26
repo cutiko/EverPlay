@@ -5,7 +5,7 @@ import styles from "../theme/styles";
 import {Song, SongState} from "../models/Song";
 import {connect} from "react-redux";
 import FlatSongs from "../components/FlatSongs";
-import {bindActionCreators} from "redux";
+import {bindActionCreators, Dispatch} from "redux";
 
 import {SongPayload} from "../actions/payload";
 import {SongAction, UPDATE_PLAYLIST, UPDATE_PLAYLIST_ROW, UPDATE_SONG_PLAYLIST} from "../actions/actions";
@@ -49,7 +49,7 @@ const updateState = function(type: string, payload: SongPayload) : SongAction {
   return {type, payload}
 }
 
-function mapDispatchToProps(dispatch : any) {
+function mapDispatchToProps(dispatch : Dispatch) {
   return bindActionCreators({updateState}, dispatch)
 }
 
