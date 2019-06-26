@@ -149,6 +149,23 @@ Regarding navigation, I also considered using Router, however, this alternative 
 
 ### App Workflow
 
+Considering the idea of making this scalable, a SplashScreen was added to later be use as a user experience holder for synchronization operations.
+
+Redux is providing the app state with 3 data sets:
+
+ - The list of playlists rows (ui data, like color and playlist name)
+ - The lists of playlists (each playlist has the songs)
+ - And the list of songs (each song has the ids of the playlist that included it)
+
+The MainScreen is connected to redux state for the list of playlists rows, once a a row is clicked the key of that playlist is passed to the next using react-navigation.
+The PlaylistScreen is connected to the redux state as well, for the list of playlists, it uses the passed key to show only the selected playlist. When the user press the add button on the top rigth corner, the key is passed to the next screen.
+The SongsScreen is connect to the songs state of redux and uses the list key passed on the navigation to set a visual check on each row if is included in this list.
+
+When a song is clicked, the event is dispatch to redux, where every reducer will take care of updating its own state in a appropiate manner. The songs state, will update the id of the playlists in the song (added or remove it). The playlists state, will update the song on the playlist (added or remove it). And the playlists rows will update the state removing or adding the song id, changing the counter.
+
+**Summary**: When then user add or remove a song on the SongScreen every other state is updated.
+
+
 ### TypeScript
 
 ### Assets
