@@ -121,11 +121,13 @@ The following data structure is heavily influenced by mi experiences working wit
  - user_songs: songs that belong to the user, it has a map with the id of the playlists where the song is included this way when looking at the songs list from a playlist it can be known if the song belongs to that playlist or not
  - songs: all the songs available (in the ficticious REST service)
 
-This data structure should allow to search for `songs` and then keeping selected songs or previous results in some sort of local persistence.
+This data structure should allow to search for `songs` and then keeping selected songs or previous results in some sort of local persistence. In this case the local persistence is the file called `seed.ts` named like that in the honor of the RoR seed files.
 
 Considering compile languajes iterating over thousands of objects would be no problem, but Maps have better performance. Modern languajes map implementations tend to be `O(1)`, instead, iterating will be linear if not sorted, log if sorted or using indexOf. Besides, this *mapped* structure allow to pinpoint relations between objects precisely.
 
 Eventually a more elaborated aplication could include the url for the actual song and if is downloaded then the local object would have the reference to the device storage.
+
+If you want to see the full example the file is called `seed_example.json`.
 
 
 ### Architecture
