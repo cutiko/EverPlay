@@ -165,8 +165,14 @@ When a song is clicked, the event is dispatch to redux, where every reducer will
 
 **Summary**: When then user add or remove a song on the SongScreen every other state is updated.
 
-
 ### TypeScript
+This is the first time I write in typescript, so I feel very anxious about my performance related with it. In this run, I have grown very fond of typescript, it leverage the power of JS and makes it more explicit. I have very strong possitive sentiments toward typescript, because:
+
+ - Is less prone to errors, my favorite example is: a callback cascaded using the HOC pattern can be defined as a function that receives `n` arguments and each argument is defined with a type
+ - By explicitly declaring what is going on, I have learned more about my dependencies, by example, instead of using `any` as the `dispatch` type for redux, I learned it actually uses a type `Dispatch`
+
+While looking for how to typescript, I got more confused, some people will focus on using stuff like `PureComponent` and `FunctionalComponent` while others will focus on the typed side of the language. I felt that the true power of the language was in the later, rather than writting `PureComponent` instead of just `Component`.
+
 
 ### Assets
 
