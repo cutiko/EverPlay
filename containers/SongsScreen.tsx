@@ -8,7 +8,7 @@ import FlatSongs from "../components/FlatSongs";
 import {bindActionCreators} from "redux";
 
 import {UPDATE_SONG_PLAYLIST, UpdateSongPlaylist} from "../actions/songsAction";
-import {PlaylistPayload, UPDATE_PLAYLIST, UpdatePlaylistAction} from '../actions/playlistAction'
+import {UPDATE_PLAYLIST, UpdatePlaylistAction} from '../actions/playlistAction'
 import {PlaylistRowPayload, UPDATE_PLAYLIST_ROW, UpdatePlayListRow} from "../actions/playlistRowAction";
 import {SongPayload} from "../actions/payload";
 
@@ -32,11 +32,7 @@ class SongsScreen extends Component<SongsProps> {
   callback = (song : Song, listId : string)=> {
     const songPayload : SongPayload = {song, listId}
     this.props.updateSongPlaylist(songPayload)
-    const playlistPayload : PlaylistPayload = {
-      song,
-      listId
-    }
-    this.props.updatePlaylistAction(playlistPayload)
+    this.props.updatePlaylistAction(songPayload)
     const playlistRowPayload : PlaylistRowPayload = {
       songId: song.key,
       listId
@@ -63,7 +59,7 @@ function updateSongPlaylist(payload: SongPayload) : UpdateSongPlaylist {
   }
 }
 
-function updatePlaylistAction(payload: PlaylistPayload) : UpdatePlaylistAction {
+function updatePlaylistAction(payload: SongPayload) : UpdatePlaylistAction {
   return {
     type: UPDATE_PLAYLIST,
     payload

@@ -1,6 +1,7 @@
 import {Playlist, PlaylistState} from "../models/Playlist";
 import {playlists} from "../seed";
-import {PlaylistPayload, PlaylistTypes, UPDATE_PLAYLIST} from "../actions/playlistAction";
+import {PlaylistTypes, UPDATE_PLAYLIST} from "../actions/playlistAction";
+import {SongPayload} from "../actions/payload";
 
 export default function playlistReducer(state : PlaylistState = playlists, action : PlaylistTypes) {
   switch (action.type) {
@@ -11,9 +12,8 @@ export default function playlistReducer(state : PlaylistState = playlists, actio
   }
 }
 
-function handleChange(state : PlaylistState, payload : PlaylistPayload) {
+function handleChange(state : PlaylistState, {song, listId} : SongPayload) {
   const copy = new Map<String, Playlist>(state)
-  const {song, listId} = payload
   const playlist = copy.get(listId)
   if (playlist) {
     const safeList : Playlist = playlist

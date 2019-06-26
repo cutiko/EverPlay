@@ -1,15 +1,10 @@
-import {Song} from "../models/Song";
+import {SongPayload} from "./payload";
 
 export const UPDATE_PLAYLIST = "UPDATE_PLAYLIST"
 
-export interface PlaylistPayload {
-  song: Song
-  listId: String
-}
-
 export interface UpdatePlaylistAction {
   type: typeof UPDATE_PLAYLIST
-  payload: PlaylistPayload
+  payload: SongPayload
 }
 
 export type PlaylistTypes = UpdatePlaylistAction
