@@ -1,10 +1,10 @@
 export interface PlayListRow {
 
-  key: String
-  name: String
-  songs: Map<String, boolean>
-  color: String
+  key: string
+  name: string
+  songs: Map<string, boolean>
+  color: string
 
 }
 
-export type PlaylistRowsState = Map<String, PlayListRow>
+export type PlaylistRowsState = Map<string, PlayListRow>

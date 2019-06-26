@@ -6,68 +6,68 @@ import {Playlist, PlaylistState} from "./models/Playlist";
 const happy : Song = {
   key: "Happy",
   name: "Happy",
-  playlists: new Map<String, boolean>().set("Relaxation", true)
+  playlists: new Map<string, boolean>().set("Relaxation", true)
 }
 
 
 const bohemian : Song = {
   key: "Bohemian Rhapsody",
   name: "Bohemian Rhapsody",
-  playlists: new Map<String, boolean>().set("RoadTrip", true).set("Work", true)
+  playlists: new Map<string, boolean>().set("RoadTrip", true).set("Work", true)
 }
 
 const sandman : Song = {
   key: "Enter Sandman",
   name: "Enter Sandman",
-  playlists: new Map<String, boolean>().set("Work", true)
+  playlists: new Map<string, boolean>().set("Work", true)
 }
 
-export const playlistsRows = new Map<String, PlayListRow>()
+export const playlistsRows = new Map<string, PlayListRow>()
 const rows = [
   {
     key: "RoadTrip",
     name: "RoadTrip",
     color: white,
-    songs: new Map<String, boolean>().set(bohemian.key, true)
+    songs: new Map<string, boolean>().set(bohemian.key, true)
   },
   {
     key: "Work",
     name: "Work",
     color: primary,
-    songs: new Map<String, boolean>().set(bohemian.key, true).set(sandman.key, true)
+    songs: new Map<string, boolean>().set(bohemian.key, true).set(sandman.key, true)
   },
   {
     key: "Relaxation",
     name: "Relaxation",
     color: accent,
-    songs: new Map<String, boolean>().set(happy.key, true)
+    songs: new Map<string, boolean>().set(happy.key, true)
   }
 ]
 rows.map(row=>{
   playlistsRows.set(row.key, row)
 })
 
-export const songs = new Map<String, Song>()
+export const songs = new Map<string, Song>()
 songs.set(happy.key, happy)
 songs.set(bohemian.key, bohemian)
 songs.set(sandman.key, sandman)
 
 const roadtrip : Playlist = {
   key: rows[0].key,
-  songs: new Map<String, Song>().set(bohemian.key, bohemian)
+  songs: new Map<string, Song>().set(bohemian.key, bohemian)
 }
 
 const work : Playlist = {
   key: rows[1].key,
-  songs: new Map<String, Song>().set(bohemian.key, bohemian).set(sandman.key, sandman)
+  songs: new Map<string, Song>().set(bohemian.key, bohemian).set(sandman.key, sandman)
 }
 
 const relax : Playlist = {
   key: rows[2].key,
-  songs: new Map<String, Song>().set(happy.key, happy)
+  songs: new Map<string, Song>().set(happy.key, happy)
 }
 
-export const playlists : PlaylistState = new Map<String, Playlist>()
+export const playlists : PlaylistState = new Map<string, Playlist>()
   .set(roadtrip.key, roadtrip)
   .set(work.key, work)
   .set(relax.key, relax)

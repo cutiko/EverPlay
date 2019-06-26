@@ -31,13 +31,12 @@ class PlaylistScreen extends Component<PlayListProps> {
   }
 }
 
-function handleState(key: String, color: String, playlists: PlaylistState) {
+function handleState(key: string, color: string = white, playlists: PlaylistState) {
   if (key) {
-    const safeColor = color || white
     const playlist : Playlist | undefined = playlists.get(key)
     if (playlists) {
       return (
-        <View style={[styles.container, {backgroundColor: safeColor.toString()}]}>
+        <View style={[styles.container, {backgroundColor: color}]}>
           <PlaylistList playlist={playlist}/>
         </View>
       )

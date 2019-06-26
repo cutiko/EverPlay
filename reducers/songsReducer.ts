@@ -13,7 +13,7 @@ export default function songsReducer(state : SongState = songs, action : SongsTy
 }
 
 function changeSongPlaylist(state: SongState, {song: {key}, listId}: SongPayload) : SongState {
-  const copy = new Map<String, Song>(state)
+  const copy = new Map<string, Song>(state)
   const copiedSong = copy.get(key)
   if (copiedSong) {
     const {playlists} = copiedSong

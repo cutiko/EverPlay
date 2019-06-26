@@ -13,7 +13,7 @@ export default function playlistReducer(state : PlaylistState = playlists, actio
 }
 
 function handleChange(state : PlaylistState, {song, listId} : SongPayload) {
-  const copy = new Map<String, Playlist>(state)
+  const copy = new Map<string, Playlist>(state)
   const playlist = copy.get(listId)
   if (playlist) {
     const safeList : Playlist = playlist

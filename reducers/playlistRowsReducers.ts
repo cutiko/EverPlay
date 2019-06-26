@@ -13,7 +13,7 @@ export default function playlistRowsReducer(state: PlaylistRowsState = playlists
 }
 
 function changeCount(state: PlaylistRowsState, {song: {key}, listId}: SongPayload) {
-  const copy = new Map<String, PlayListRow>(state)
+  const copy = new Map<string, PlayListRow>(state)
   const row = copy.get(listId)
   if (row) {
     const safeRow : PlayListRow = row

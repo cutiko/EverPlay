@@ -24,7 +24,7 @@ class MainScreen extends Component<MainProps> {
       <View style={styles.container}>
         <PlayListRows
           rows={playlistRows}
-          callback={(key: String)=>navigate(PLAYLIST_SCREEN, {playlistRow: playlistRows.get(key)})}
+          callback={(key: string)=>navigate(PLAYLIST_SCREEN, {playlistRow: playlistRows.get(key)})}
         />
       </View>
     );

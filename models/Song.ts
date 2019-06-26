@@ -1,7 +1,7 @@
 export interface Song {
-  key: String
-  name: String
+  key: string
+  name: string
   playlists: Map<String, boolean>
 }
 
-export type SongState = Map<String, Song>
+export type SongState = Map<string, Song>
