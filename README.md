@@ -175,6 +175,9 @@ While looking for how to typescript, I got more confused, some people will focus
 
 
 ### Assets
+I was not sure untill recently how to properly use assets, so I started with some basic assets as placeholders. I postpone this taks because there were more important things to solve first. By example, U had to solve the critical path, if the redux and navigation integration failed, I would have nothing.
+
+After reviewing the docs related with it. I think React Native approach for assets is fairly simple and should be enough for any screen density. Since I was on this, I took some time to create an Illustrator script for automatically saving any of my work with images in every density needed (@1x, @2x, @3x).
 
 ### Improvements
 
