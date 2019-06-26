@@ -10,6 +10,7 @@ import {playlists} from "../seed";
 import PlaylistList from "../components/FlatPlaylist";
 import AddButton from "../components/AddButton";
 import {SONGS_SCREEN} from "../Navigation";
+import {AppState} from "../reducers/combineReducers";
 
 interface PlayListProps extends EverProps{
   playlists: PlaylistState
@@ -49,7 +50,7 @@ function handleState(key: string, color: string = white, playlists: PlaylistStat
   )
 }
 
-function mapStateToProps(state : any) {
+function mapStateToProps(state : AppState) {
   return {
     playlists: state.playlists
   }

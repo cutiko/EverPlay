@@ -9,6 +9,7 @@ import {bindActionCreators} from "redux";
 
 import {SongPayload} from "../actions/payload";
 import {SongAction, UPDATE_PLAYLIST, UPDATE_PLAYLIST_ROW, UPDATE_SONG_PLAYLIST} from "../actions/actions";
+import {AppState} from "../reducers/combineReducers";
 
 interface SongsProps extends EverProps {
   songs: SongState
@@ -52,7 +53,7 @@ function mapDispatchToProps(dispatch : any) {
   return bindActionCreators({updateState}, dispatch)
 }
 
-function mapStateToProps(state : any) {
+function mapStateToProps(state : AppState) {
   return {
     songs: state.songs
   }

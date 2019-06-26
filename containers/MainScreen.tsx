@@ -6,6 +6,7 @@ import styles from "../theme/styles";
 import {PlaylistRowsState} from "../models/PlayListRow";
 import PlayListRows from "../components/FlatPlayListRow";
 import {PLAYLIST_SCREEN} from "../Navigation";
+import {AppState} from "../reducers/combineReducers";
 
 interface MainProps extends NavigationScreenProps {
   playlistRows: PlaylistRowsState
@@ -31,7 +32,7 @@ class MainScreen extends Component<MainProps> {
   }
 }
 
-function mapStateToProps(state : any) {
+function mapStateToProps(state : AppState) {
   return {
     playlistRows: state.playlistRows
   }
