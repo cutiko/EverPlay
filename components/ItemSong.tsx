@@ -9,12 +9,11 @@ export default ({item, listId, callback}: { item: Song, listId: string, callback
   return (
     <View
       style={[
-        styles.textColor,
         row.container,
-        row.wrapper
+        row.wrapper,
       ]}
     >
-      <Text style={row.text} onPress={()=>callback(item, listId)}>{item.name}</Text>
+      <Text style={[row.text, styles.textColor]} onPress={()=>callback(item, listId)}>{item.name}</Text>
       <Image source={require('../images/ic_check_white_circle_primary_16.png')} style={{display:display}}/>
     </View>
   )
