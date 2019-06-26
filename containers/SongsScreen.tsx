@@ -8,20 +8,11 @@ import FlatSongs from "../components/FlatSongs";
 import {bindActionCreators} from "redux";
 
 import {SongPayload} from "../actions/payload";
-import {
-  UPDATE_PLAYLIST,
-  UPDATE_PLAYLIST_ROW,
-  UPDATE_SONG_PLAYLIST,
-  UpdatePlaylistAction,
-  UpdatePlayListRowAction,
-  UpdateSongPlaylistAction
-} from "../actions/actions";
+import {SongsTypes, UPDATE_PLAYLIST, UPDATE_PLAYLIST_ROW, UPDATE_SONG_PLAYLIST} from "../actions/actions";
 
 interface SongsProps extends EverProps {
   songs: SongState
-  updateSongPlaylist: Function
-  updatePlaylistAction: Function
-  updatePlayListRow: Function
+  updateState: Function
 }
 
 class SongsScreen extends Component<SongsProps> {
@@ -36,9 +27,10 @@ class SongsScreen extends Component<SongsProps> {
 
   callback = (song : Song, listId : string)=> {
     const songPayload : SongPayload = {song, listId}
-    this.props.updateSongPlaylist(songPayload)
-    this.props.updatePlaylistAction(songPayload)
-    this.props.updatePlayListRow(songPayload)
+    const {updateState} = this.props
+    updateState(UPDATE_SONG_PLAYLIST, songPayload)
+    updateState(UPDATE_PLAYLIST, songPayload)
+    updateState(UPDATE_PLAYLIST_ROW, songPayload)
   }
 
   render() {
@@ -52,38 +44,10 @@ class SongsScreen extends Component<SongsProps> {
   }
 }
 
-
-function updateSongPlaylist(payload: SongPayload) : UpdateSongPlaylistAction {
-  return {
-    type: UPDATE_SONG_PLAYLIST,
-    payload
-  }
-}
-
-function updatePlaylistAction(payload: SongPayload) : UpdatePlaylistAction {
-  return {
-    type: UPDATE_PLAYLIST,
-    payload
-  }
-}
-
-function updatePlayListRow(payload : SongPayload): UpdatePlayListRowAction {
-  return {
-    type: UPDATE_PLAYLIST_ROW,
-    payload
-  }
-}
-
-function updateState(payload: SongPayload) {
-
-}
+const updateState : SongsTypes = (type: string, payload: SongPayload)=>{return {type, payload}}
 
 function mapDispatchToProps(dispatch : any) {
-  return bindActionCreators({
-    updateSongPlaylist,
-    updatePlaylistAction,
-    updatePlayListRow
-  }, dispatch)
+  return bindActionCreators({updateState}, dispatch)
 }
 
 function mapStateToProps(state : any) {
