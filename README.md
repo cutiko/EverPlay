@@ -133,9 +133,18 @@ If you want to see the full example the file is called `seed_example.json`.
 ### Architecture
 While figuring how to solve this, my main concerns where 2:
 
- - Solve it in a React way
+ - Solve it in a *React way*
  - My experience as Android developer makes me worry about device performance
 
+The traditional way to solve this in Android it would be to use the SQL database, then each screen will set a listener to a database query for accesing the data. The problems with this is [the library I found](https://github.com/andpor/react-native-sqlite-storage) for it, has a very extensive setup and it doesn't seem to have a way to provide an observable for the data. Using the component lifecycle to query the data each time, loose the reactive programming in the *react way*, is wastefull, and could be frail if the component lifecycle is not called due to a navigation problem.
+
+The previous analisis made me shift to what I have done in the pass using React, wich is using Redux. The next step then, would be handling the navigation.
+
+The recommended navigation according to native docs is react-navigation. I was very confused with this, because when searching how to integrate it with Redux, found another library with the [same name](https://github.com/wix/react-native-navigation) but from Wix. I was miss lead because the integration seemed simple, but adding the wix library was hurtfully extensive. After that, my choice was to try using my humble knowledge on React and Redux for solving the integration with the recommended react-navigation. My conjecture at the moment was, that the navigator should be wrapped by the `Provider` from Redux, eventually will solving this, this lead me back to the recommended react-navigation documentation, specifically to the integration with Redux section, solving my problem.
+
+Regarding navigation, I also considered using Router, however, this alternative was discharged because, Router would show and hide stuff instead of handling it like sreens as is done in a mobile native approach. At this moment I'm not sure that react-navigation is superior, because while conducting some quick experiments with the component lifecycle I found some events are not called when expected. To truly test wich navigation is more performant, a POC should be made with more time. My first approach for this POC, would be to look at the Android Activity lifecycle to see if is actually happening. This would be important for a production app, so the team truly knows what is the performance of the choosen library.
+
+**Summary**: React Redux with react-navigation
 
 
 ### App Workflow
