@@ -5,7 +5,9 @@ import styles from "../theme/styles";
 import {white} from "../theme/colors";
 import {rowStyle as row} from '../theme/playlistRow'
 
-export default ({row: {name, songs, color, key}, callback}: { row: PlayListRow, callback: Function }) => {
+export type callback = (key: string)=>void
+
+export default ({row: {name, songs, color, key}, callback}: { row: PlayListRow, callback: callback }) => {
   const safeColor = color || white
   return (
     <View style={row.container}>

@@ -1,10 +1,10 @@
 import React from 'react'
 import {FlatList} from 'react-native'
 import {PlayListRow, PlaylistRowsState} from "../models/PlayListRow";
-import PlaylistRowItem from "./ItemPlaylistRow";
+import PlaylistRowItem, {callback} from "./ItemPlaylistRow";
 
 
-export default ({rows, callback}: {rows: PlaylistRowsState, callback: Function}) => {
+export default ({rows, callback}: {rows: PlaylistRowsState, callback: callback}) => {
   const data: PlayListRow[] = Array.from(rows.values())
 
   const renderItem = ({item}: { item: PlayListRow }) => (
