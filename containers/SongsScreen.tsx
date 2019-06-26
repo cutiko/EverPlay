@@ -7,10 +7,15 @@ import {connect} from "react-redux";
 import FlatSongs from "../components/FlatSongs";
 import {bindActionCreators} from "redux";
 
-import {UPDATE_SONG_PLAYLIST, UpdateSongPlaylist} from "../actions/songsAction";
-import {UPDATE_PLAYLIST, UpdatePlaylistAction} from '../actions/playlistAction'
-import {UPDATE_PLAYLIST_ROW, UpdatePlayListRow} from "../actions/playlistRowAction";
 import {SongPayload} from "../actions/payload";
+import {
+  UPDATE_PLAYLIST,
+  UPDATE_PLAYLIST_ROW,
+  UPDATE_SONG_PLAYLIST,
+  UpdatePlaylistAction,
+  UpdatePlayListRowAction,
+  UpdateSongPlaylistAction
+} from "../actions/actions";
 
 interface SongsProps extends EverProps {
   songs: SongState
@@ -48,7 +53,7 @@ class SongsScreen extends Component<SongsProps> {
 }
 
 
-function updateSongPlaylist(payload: SongPayload) : UpdateSongPlaylist {
+function updateSongPlaylist(payload: SongPayload) : UpdateSongPlaylistAction {
   return {
     type: UPDATE_SONG_PLAYLIST,
     payload
@@ -62,11 +67,15 @@ function updatePlaylistAction(payload: SongPayload) : UpdatePlaylistAction {
   }
 }
 
-function updatePlayListRow(payload : SongPayload): UpdatePlayListRow {
+function updatePlayListRow(payload : SongPayload): UpdatePlayListRowAction {
   return {
     type: UPDATE_PLAYLIST_ROW,
     payload
   }
+}
+
+function updateState(payload: SongPayload) {
+
 }
 
 function mapDispatchToProps(dispatch : any) {

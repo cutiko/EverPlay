@@ -1,9 +1,9 @@
 import {Playlist, PlaylistState} from "../models/Playlist";
 import {playlists} from "../seed";
-import {PlaylistTypes, UPDATE_PLAYLIST} from "../actions/playlistAction";
 import {SongPayload} from "../actions/payload";
+import {SongsTypes, UPDATE_PLAYLIST} from "../actions/actions";
 
-export default function playlistReducer(state : PlaylistState = playlists, action : PlaylistTypes) {
+export default function playlistReducer(state : PlaylistState = playlists, action : SongsTypes) {
   switch (action.type) {
     case UPDATE_PLAYLIST:
       return handleChange(state, action.payload)
