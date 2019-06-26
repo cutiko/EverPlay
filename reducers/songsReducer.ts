@@ -1,9 +1,9 @@
 import {Song, SongState} from "../models/Song";
 import {songs} from "../seed";
 import {SongPayload} from "../actions/payload";
-import {SongsTypes, UPDATE_SONG_PLAYLIST} from "../actions/actions";
+import {SongAction, UPDATE_SONG_PLAYLIST} from "../actions/actions";
 
-export default function songsReducer(state : SongState = songs, action : SongsTypes) : SongState {
+export default function songsReducer(state : SongState = songs, action : SongAction) : SongState {
   switch (action.type) {
     case UPDATE_SONG_PLAYLIST:
       return changeSongPlaylist(state, action.payload)

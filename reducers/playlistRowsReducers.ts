@@ -1,9 +1,9 @@
 import {playlistsRows} from "../seed";
 import {PlayListRow, PlaylistRowsState} from "../models/PlayListRow";
 import {SongPayload} from "../actions/payload";
-import {SongsTypes, UPDATE_PLAYLIST_ROW} from "../actions/actions";
+import {SongAction, UPDATE_PLAYLIST_ROW} from "../actions/actions";
 
-export default function playlistRowsReducer(state: PlaylistRowsState = playlistsRows, action: SongsTypes): PlaylistRowsState {
+export default function playlistRowsReducer(state: PlaylistRowsState = playlistsRows, action: SongAction): PlaylistRowsState {
   switch (action.type) {
     case UPDATE_PLAYLIST_ROW:
       return changeCount(state, action.payload)

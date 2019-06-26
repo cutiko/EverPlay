@@ -8,7 +8,7 @@ import FlatSongs from "../components/FlatSongs";
 import {bindActionCreators} from "redux";
 
 import {SongPayload} from "../actions/payload";
-import {SongsTypes, UPDATE_PLAYLIST, UPDATE_PLAYLIST_ROW, UPDATE_SONG_PLAYLIST} from "../actions/actions";
+import {SongAction, UPDATE_PLAYLIST, UPDATE_PLAYLIST_ROW, UPDATE_SONG_PLAYLIST} from "../actions/actions";
 
 interface SongsProps extends EverProps {
   songs: SongState
@@ -44,7 +44,9 @@ class SongsScreen extends Component<SongsProps> {
   }
 }
 
-const updateState : SongsTypes = (type: string, payload: SongPayload)=>{return {type, payload}}
+const updateState = function(type: string, payload: SongPayload) : SongAction {
+  return {type, payload}
+}
 
 function mapDispatchToProps(dispatch : any) {
   return bindActionCreators({updateState}, dispatch)
